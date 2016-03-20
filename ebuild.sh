@@ -327,7 +327,10 @@ MainBuildScript() {
     checkToolchain
 
     if [[ -d .git ]]; then
-        git svn info | grep Revision | tr -cd [:digit:] >vers.txt
+        gitrev=$(git rev-list HEAD --count)
+        svnrev=$(git svn info | grep Revision | tr -cd [:digit:])
+        revdiff=$(echo "$gitrev - $svnrev" | bc)
+        echo "$svnrev-rm$revdiff" > vers.txt
     else
         svnversion -n | tr -d [:alpha:] >vers.txt
     fi
