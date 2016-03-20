@@ -356,13 +356,13 @@
   #Clover/Trash/VBoxIdeBusDxe/VBoxIdeBusDxe.inf
   Clover/SataControllerDxe/SataControllerDxe.inf
   #MdeModulePkg/Bus/Ata/AtaAtapiPassThru/AtaAtapiPassThru.inf
-  Clover/AtaAtapi/AtaAtapiPassThru.inf
+  #Clover/AtaAtapi/AtaAtapiPassThru.inf
   #MdeModulePkg/Bus/Ata/AtaBusDxe/AtaBusDxe.inf
-  Clover/AtaBus/AtaBusDxe.inf
+  #Clover/AtaBus/AtaBusDxe.inf
   #MdeModulePkg/Bus/Scsi/ScsiBusDxe/ScsiBusDxe.inf
-  Clover/DVDBus/ScsiBusDxe.inf
+  #Clover/DVDBus/ScsiBusDxe.inf
   #MdeModulePkg/Bus/Scsi/ScsiDiskDxe/ScsiDiskDxe.inf
-  Clover/DVDDisk/ScsiDiskDxe.inf
+  #Clover/DVDDisk/ScsiDiskDxe.inf
   #IntelFrameworkModulePkg/Bus/Pci/IdeBusDxe/IdeBusDxe.inf
 !endif
 
