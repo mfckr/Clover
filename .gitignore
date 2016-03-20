@@ -1,5 +1,6 @@
 # OS X temporary files that should never be committed
 .DS_Store
+.git
 *.swp
 *.lock
 *~
@@ -69,4 +70,3 @@ CloverUpdater.strings
 CloverPackage/CloverUpdater/src/*.lproj
 CloverPrefpane.strings
 CloverPackage/CloverPrefpane/src/*.lproj
-
