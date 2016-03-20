@@ -63,18 +63,18 @@ case "$XCODE_MAJOR_VERSION" in
     5) PATCH_FILE=;;
 esac
 
-if [[ ! -x "$TOOLCHAIN_DIR"/cross/bin/x86_64-clover-linux-gnu-gcc && \
-      ! -x "$TOOLCHAIN_DIR"/cross/bin/i686-clover-linux-gnu-gcc ]]; then
-    echo "No clover toolchain found !" >&2
-    echo "Build it with the buidgcc.sh script or defined the TOOLCHAIN_DIR variable." >&2
-    exit 1
-fi
+#if [[ ! -x "$TOOLCHAIN_DIR"/cross/bin/x86_64-clover-linux-gnu-gcc && \
+#      ! -x "$TOOLCHAIN_DIR"/cross/bin/i686-clover-linux-gnu-gcc ]]; then
+#    echo "No clover toolchain found !" >&2
+#    echo "Build it with the buidgcc.sh script or defined the TOOLCHAIN_DIR variable." >&2
+#    exit 1
+#fi
 
-if [[ ! -x "$TOOLCHAIN_DIR"/bin/nasm ]]; then
-    echo "No nasm binary found in toolchain directory !" >&2
-    echo "Build it with the buidnasm.sh script." >&2
-    exit 1
-fi
+#if [[ ! -x "$TOOLCHAIN_DIR"/bin/nasm ]]; then
+#    echo "No nasm binary found in toolchain directory !" >&2
+#    echo "Build it with the buidnasm.sh script." >&2
+#    exit 1
+#fi
 
 ## FUNCTIONS ##
 
