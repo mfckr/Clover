@@ -100,16 +100,8 @@ INF  DuetPkg/SmbiosGenDxe/SmbiosGen.inf
 INF  Clover/OsxBdsDxe/BdsDxe.inf
 INF  MdeModulePkg/Universal/EbcDxe/EbcDxe.inf
 INF  MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
-INF  Clover/UefiCpuPkg/CpuIo2Dxe/CpuIo2Dxe.inf
-#INF  Clover/UefiCpuPkg/CpuDxe/CpuDxe.inf
-
-#INF  IntelFrameworkModulePkg/Universal/CpuIoDxe/CpuIoDxe.inf
-INF  Clover/CpuDxe/Cpu.inf
-!ifndef CLANG
-#INF  UefiCpuPkg/CpuDxe/CpuDxe.inf
-!else
-#INF  RuleOverride=BINARY Clover/CpuDxeBin/CpuDxeBin.inf
-!endif
+INF  UefiCpuPkg/CpuIo2Dxe/CpuIo2Dxe.inf
+INF  UefiCpuPkg/CpuDxe/CpuDxe.inf
 
     # DataHub
 #INF  Clover/VBoxAppleSim/VBoxAppleSim.inf
