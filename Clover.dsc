@@ -448,15 +448,6 @@
       gEfiMdeModulePkgTokenSpaceGuid.PcdHwErrStorageSize|0x0000
   }
 
-  Clover/AppleImageCodec/AppleImageCodec.inf
-
-  #
-  # Sample Application
-  #
-  #MdeModulePkg/Application/HelloWorld/HelloWorld.inf
-  #MdeModulePkg/Application/VariableInfo/VariableInfo.inf
-  #Clover/Sample/Application/Sample.inf
-  #Clover/gptsync/gptsync.inf
   Clover/bdmesg_efi/bdmesg.inf
   
 !ifdef DEBUG_ON_SERIAL_PORT
