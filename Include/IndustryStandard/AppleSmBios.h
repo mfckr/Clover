@@ -84,7 +84,7 @@ typedef struct {
 ///
 typedef struct {
   SMBIOS_STRUCTURE      Hdr;
-  UINT64                PlatformFeature;   // MT/s unit
+  UINT64                PlatformFeature;
 } SMBIOS_TABLE_TYPE133;
 
 ///
