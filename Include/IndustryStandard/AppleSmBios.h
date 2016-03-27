@@ -64,7 +64,7 @@ typedef struct {
 } SMBIOS_TABLE_TYPE130;
 
 ///
-/// OEM Processor Type (Type 131).
+/// Apple Processor Type (Type 131).
 ///
 typedef struct {
   SMBIOS_STRUCTURE      Hdr;
@@ -72,7 +72,7 @@ typedef struct {
 } SMBIOS_TABLE_TYPE131;
 
 ///
-/// OEM Processor Bus Speed (Type 132).
+/// Apple Processor Bus Speed (Type 132).
 ///
 typedef struct {
   SMBIOS_STRUCTURE      Hdr;
@@ -80,12 +80,20 @@ typedef struct {
 } SMBIOS_TABLE_TYPE132;
 
 ///
-/// OEM Platform Feature (Type 133).
+/// Apple Platform Feature (Type 133).
 ///
 typedef struct {
   SMBIOS_STRUCTURE      Hdr;
   UINT64                PlatformFeature;
 } SMBIOS_TABLE_TYPE133;
+
+///
+/// Apple SMC Version (Type 134).
+///
+typedef struct {
+  SMBIOS_STRUCTURE      Hdr;
+  UINT64                SMCVersion;
+} SMBIOS_TABLE_TYPE134;
 
 ///
 /// Union of all the possible SMBIOS record types.
@@ -142,6 +150,7 @@ typedef union {
   SMBIOS_TABLE_TYPE131  *Type131;
   SMBIOS_TABLE_TYPE132  *Type132;
   SMBIOS_TABLE_TYPE133  *Type133;
+  SMBIOS_TABLE_TYPE134  *Type134;
   UINT8                 *Raw;
 } APPLE_SMBIOS_STRUCTURE_POINTER;
 
