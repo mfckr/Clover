@@ -328,7 +328,7 @@ MainBuildScript() {
 
     if [[ -d .git ]]; then
         gitrev=$(git rev-list HEAD --count)
-        svnrev=$(git svn info | grep Revision | tr -cd [:digit:])
+        svnrev=$(git svn log | head -n2 | tail -n1 | awk '{ print $1 }' | tr -d 'r')
         revdiff=$(echo "$gitrev - $svnrev" | bc)
         echo "$svnrev-rm$revdiff" > vers.txt
     else
