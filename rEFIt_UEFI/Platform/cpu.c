@@ -335,10 +335,18 @@ VOID GetCPUProperties (VOID)
     DBG(" TSC/CCC Information Leaf:\n");
 		DBG("  numerator     : %d\n", Num);
 		DBG("  denominator   : %d\n", Denom);
+    // Skylakes utilize a different means of TSC calibration by way of an Always Running Timer (ART), such that the
+    // value can be described by the relationship TSC = ARTFreq * N / M
     if (Num && Denom) {
-      gCPUStructure.ARTFrequency = DivU64x32(MultU64x32(gCPUStructure.TSCCalibr, Denom), Num);
-      DBG(" Calibrated ARTFrequency: %lld\n", gCPUStructure.ARTFrequency);
-    }
+    	// Verify that ARTFreq doesn't already exist
+    	if(!gCPUStructure.ARTFrequency){
+    		// In lieu of an existing ARTFreq value, decree it as 24KHz
+    		// See http://www.opensource.apple.com/source/xnu/xnu-3248.20.55/osfmk/i386/tsc.c
+    		gCPUStructure.ARTFrequency = BASE_ART_CLOCK_SOURCE;
+    	}
+        //gCPUStructure.ARTFrequency = DivU64x32(MultU64x32(gCPUStructure.TSCCalibr, Denom), Num);
+        DBG(" Calibrated ARTFrequency: %lld\n", gCPUStructure.ARTFrequency);
+      }
   }
 
 	//get Min and Max Ratio Cpu/Bus
