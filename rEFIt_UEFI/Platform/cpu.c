@@ -338,9 +338,9 @@ VOID GetCPUProperties (VOID)
     // Skylakes utilize a different means of TSC calibration by way of an Always Running Timer (ART), such that the
     // value can be described by the relationship TSC = ARTFreq * N / M
     if (Num && Denom) {
-    	// Verify that ARTFreq doesn't already exist
+    	// Verify that ARTFreq doesn't already exist from an early preboot source
     	if(!gCPUStructure.ARTFrequency){
-    		// In lieu of an existing ARTFreq value, decree it as 24KHz
+    		// In lieu of an existing ARTFreq value, set it like so (24MHz)
     		// See http://www.opensource.apple.com/source/xnu/xnu-3248.20.55/osfmk/i386/tsc.c
     		gCPUStructure.ARTFrequency = BASE_ART_CLOCK_SOURCE;
     	}
